@@ -45,13 +45,16 @@
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Github Stats 🔥
+<p align="center">
+<a href="https://github.com/Jikugodwill/github-readme-stats"><img align="center" height="200" width="48%" src="https://github-readme-stats.vercel.app/api?username=Jikugodwill&show_icons=true&locale=en&theme=tokyonight" alt="Jikugodwill" /></a>
+<a href="https://github.com/Jikugodwill/github-readme-stats"><img align="center" height="190" width="48%" src="https://github-readme-stats.vercel.app/api/top-langs?username=Jikugodwill&size_weight=0.5&count_weight=0.5&show_icons=true&locale=en&layout=compact&theme=cobalt" alt="Jikugodwill" /></a>
+</p>
 
-<!--<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=Jikugodwill&show_icons=true&locale=en&layout=compact&theme=cobalt" alt="Jikugodwill" /></p>-->
-![Stats](https://github-readme-stats.vercel.app/api/top-langs?username=Jikugodwill&show_icons=true&locale=en&layout=compact&theme=cobalt)
 
-<!--<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com?user=Jikugodwill&theme=radical&date_format=j%20M%5B%20Y%5D&sideLabels=DDB225" alt="Jikugodwill" /></p>-->
-![Streak](https://github-readme-streak-stats.herokuapp.com?user=Jikugodwill&theme=radical&date_format=j%20M%5B%20Y%5D&sideLabels=DDB225)
+<!--![Stats](https://github-readme-stats.vercel.app/api/top-langs?username=Jikugodwill&size_weight=0.5&count_weight=0.5&show_icons=true&locale=en&layout=donut&theme=cobalt)-->
 
-<!--<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Jikugodwill&show_icons=true&locale=en&theme=tokyonight" alt="Jikugodwill" /></p>-->
-![Stats](https://github-readme-stats.vercel.app/api?username=Jikugodwill&show_icons=true&locale=en&theme=tokyonight)
+<!--![Streak](https://github-readme-streak-stats.herokuapp.com?user=Jikugodwill&theme=radical&date_format=j%20M%5B%20Y%5D&sideLabels=DDB225)-->
+
+<p><img align="center" width="98%" src="https://github-readme-streak-stats.herokuapp.com?user=Jikugodwill&theme=radical&date_format=j%20M%5B%20Y%5D&sideLabels=DDB225" alt="Jikugodwill" /></p>
+
 
