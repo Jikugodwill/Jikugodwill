@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hi there 👋, Jiku Godwill
 <h3 align="center">A passionate ReactJS Frontend Engineer from Cameroon ✨ Web 3.0 Enthusiast ✨</h3>
 <hr>
 
