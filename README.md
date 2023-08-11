@@ -2,7 +2,7 @@
 <h3 align="center">A passionate ReactJS Frontend Engineer from Cameroon ✨ Web 3.0 Enthusiast ✨</h3>
 <hr>
 
-# Let's Stay connected <a href="https://twitter.com/JikuGodwill" target="blank"><img src="https://img.shields.io/twitter/follow/JikuGodwill?logo=twitter&style=for-the-badge" alt="JikuGodwill" /></a>
+# Let's Stay connected <a href="https://twitter.com/JikuGodwill" target="_blank"><img src="https://img.shields.io/twitter/follow/JikuGodwill?logo=twitter&style=for-the-badge" alt="JikuGodwill" /></a>
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/ggggunna) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/jiku-godwill-nsanwi-08b006197) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill) 
 
