@@ -1,11 +1,10 @@
 
-# Hi there 👋, I'm Jiku Godwill 🙂
+# Hi there 👋, I'm Jiku Godwill [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/jiku-godwill-nsanwi-08b006197) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill) 
 <h3 align="center">A passionate Software Engineer - ReactJS Frontend Engineer from Cameroon ✨ Web 3.0 Enthusiast ✨</h3>
 <hr>
 
-# Let's Stay connected [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/jiku-godwill-nsanwi-08b006197) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill) 
 
-
+## GitHub Badges
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Jikugodwill&row=1&theme=darkhub&margin-w=15&no-bg=true" alt="Jikugodwill" /></a> </p>
 
 
@@ -20,10 +19,11 @@
 
 ### Frontend
 ![ReactJS](https://img.shields.io/badge/ReactJS-logo?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![NextJS](https://img.shields.io/badge/NextJS-logo?style=for-the-badge&logo=nextdotjs)
  ![Static Badge](https://img.shields.io/badge/React%20Router-logo?style=for-the-badge&logo=reactrouter&color=%23fff) 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Redux-logo?style=for-the-badge&logo=redux&logoColor=%23764ABC&color=%23eee)
+![Redux](https://img.shields.io/badge/Redux-logo?style=for-the-badge&logo=redux&logoColor=%23764ABC&color=%23eee)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
 ### Backend and Databases
