@@ -1,5 +1,5 @@
 
-# Hi there 👋, I'm Jiku Godwill [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/jiku-godwill-nsanwi-08b006197) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill) 
+# Hi 👋, I'm Godwill [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/jiku-godwill-nsanwi-08b006197) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill) 
 <h3 align="center">A passionate Software Engineer - ReactJS Frontend Engineer ✨ Web 3.0 Enthusiast ✨</h3>
 <hr>
 
