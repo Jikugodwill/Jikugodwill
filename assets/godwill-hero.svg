@@ -3,7 +3,7 @@
   role="img"
   aria-labelledby="title desc">
 
-  <title id="title">Godwill Jiku — Software Architect, Technical Founder, AI & Web3 Engineer</title>
+  <title id="title">Godwill Jiku — Software Architect, Technical Founder, AI &amp; Web3 Engineer</title>
   <desc id="desc">
     Futuristic engineering profile banner for Godwill Jiku, founder of KwadRise Labs,
     focused on software architecture, AI, Web3 and product systems.
@@ -24,7 +24,7 @@
       <stop offset="1" stop-color="#56E0B5"/>
     </linearGradient>
 
-    <linearGradient id="nameLine" x1="68" y1="0" x2="520" y2="0">
+    <linearGradient id="nameLine" x1="68" y1="0" x2="524" y2="0" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F6B84A"/>
       <stop offset="0.55" stop-color="#A78BFA"/>
       <stop offset="1" stop-color="#56E0B5"/>
@@ -97,10 +97,12 @@
     }
 
     .role-2 {
+      opacity: 0;
       animation: role2 10.5s ease-in-out infinite;
     }
 
     .role-3 {
+      opacity: 0;
       animation: role3 10.5s ease-in-out infinite;
     }
 
@@ -349,41 +351,7 @@
   </g>
 
   <!-- Terminal prompt -->
-  <text
-    x="70"
-    y="100"
-    class="mono"
-    font-size="16"
-    fill="#56E0B5">
-    godwill@kwadrise
-  </text>
-
-  <text
-    x="220"
-    y="100"
-    class="mono"
-    font-size="16"
-    fill="#59627A">
-    :
-  </text>
-
-  <text
-    x="231"
-    y="100"
-    class="mono"
-    font-size="16"
-    fill="#A78BFA">
-    ~/systems
-  </text>
-
-  <text
-    x="323"
-    y="100"
-    class="mono"
-    font-size="16"
-    fill="#E2E8F0">
-    $ whoami
-  </text>
+  <text x="70" y="100" class="mono" font-size="16"><tspan fill="#56E0B5">godwill@kwadrise</tspan><tspan fill="#94A3B8">:</tspan><tspan fill="#A78BFA">~/systems</tspan><tspan fill="#E2E8F0">&#160;$ whoami</tspan></text>
 
   <!-- Identity -->
   <text
@@ -412,42 +380,20 @@
     font-size="20"
     font-weight="500">
 
-    <text
-      class="role-1"
-      x="70"
-      y="221"
-      fill="#C4B5FD">
-      Software Architect
-    </text>
-
-    <text
-      class="role-2"
-      x="70"
-      y="221"
-      fill="#F6C96B">
-      Founder · KwadRise Labs
-    </text>
-
-    <text
-      class="role-3"
-      x="70"
-      y="221"
-      fill="#7BE8C6">
-      AI · Web3 · Product Systems
-    </text>
+    <g class="role-1">
+      <text x="70" y="221" fill="#C4B5FD">Software Architect</text>
+      <rect class="cursor" x="296" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
+    </g>
+    <g class="role-2">
+      <text x="70" y="221" fill="#F6C96B">Founder · KwadRise Labs</text>
+      <rect class="cursor" x="344" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
+    </g>
+    <g class="role-3">
+      <text x="70" y="221" fill="#7BE8C6">AI · Web3 · Product Systems</text>
+      <rect class="cursor" x="392" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
+    </g>
 
   </g>
-
-  <rect
-    class="cursor"
-    x="392"
-    y="202"
-    width="10"
-    height="24"
-    rx="1"
-    fill="#F6B84A"
-    filter="url(#glow)"
-  />
 
   <!-- Positioning -->
   <text
@@ -530,6 +476,6 @@
   <g class="mono" font-size="9" letter-spacing="1.3" fill="#4E5870">
     <text x="934" y="115">ARCHITECTURE</text>
     <text x="1046" y="249">EXECUTION</text>
-    <text x="1030" y="176">SYSTEMS</text>
+    <text x="903" y="281">SYSTEMS</text>
   </g>
 </svg>

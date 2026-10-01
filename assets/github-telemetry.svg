@@ -1,0 +1,14 @@
+<svg width="1200" height="240" viewBox="0 0 1200 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub engineering telemetry — awaiting first sync</title>
+  <desc id="desc">No statistics have been generated yet. Run the Refresh engineering telemetry workflow on GitHub to populate this panel.</desc>
+  <defs>
+    <linearGradient id="accent" x2="1200" gradientUnits="userSpaceOnUse"><stop stop-color="#F6B84A"/><stop offset=".5" stop-color="#A78BFA"/><stop offset="1" stop-color="#56E0B5"/></linearGradient>
+  </defs>
+  <style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}</style>
+  <rect x="1" y="1" width="1198" height="238" rx="22" fill="#0D1224" stroke="url(#accent)" stroke-width="2"/>
+  <text x="48" y="53" font-size="12" letter-spacing="2" fill="#A3AEC5">GITHUB // JIKUGODWILL</text>
+  <text x="48" y="103" font-size="28" font-weight="700" fill="#F8FAFC">ENGINEERING TELEMETRY</text>
+  <circle cx="56" cy="150" r="5" fill="#F6B84A"/>
+  <text x="74" y="155" font-size="16" fill="#F6C96B">AWAITING FIRST SYNC</text>
+  <text x="48" y="199" font-size="13" fill="#B8C1D4">Run “Refresh engineering telemetry” in the repository Actions tab.</text>
+</svg>

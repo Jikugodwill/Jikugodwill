@@ -1,0 +1,43 @@
+<svg width="1200" height="540" viewBox="0 0 1200 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Godwill Jiku — engineering focus</title>
+  <desc id="desc">Frontend and mobile systems connect to product architecture; Solana and NEAR connect to blockchain applications; LLM workflows connect to product intelligence. TypeScript, data systems and cloud form the foundation. This is an editorial focus map, not a chronological history or a skills certification.</desc>
+  <defs>
+    <linearGradient id="surface" x2="1200" y2="540" gradientUnits="userSpaceOnUse"><stop stop-color="#070B16"/><stop offset="1" stop-color="#10162A"/></linearGradient>
+    <linearGradient id="edge" x2="1200" gradientUnits="userSpaceOnUse"><stop stop-color="#F6B84A"/><stop offset=".5" stop-color="#A78BFA"/><stop offset="1" stop-color="#56E0B5"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#A78BFA" stroke-opacity=".045"/></pattern>
+  </defs>
+  <style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}.signal{stroke-dasharray:5 9;animation:flow 8s linear infinite}@keyframes flow{to{stroke-dashoffset:-112}}@media(prefers-reduced-motion:reduce){.signal{animation:none}}</style>
+  <rect x="1" y="1" width="1198" height="538" rx="22" fill="url(#surface)" stroke="url(#edge)" stroke-width="2"/>
+  <rect x="18" y="18" width="1164" height="504" rx="15" fill="url(#grid)"/>
+  <text x="48" y="44" font-size="12" letter-spacing="2" fill="#A3AEC5">KWADRISE LABS // ENGINEERING DIRECTION</text>
+  <text x="48" y="86" font-size="28" font-weight="700" fill="#F8FAFC">FROM INTERFACES TO PRODUCT SYSTEMS</text>
+  <path d="M592 116V414" stroke="#29334B"/>
+  <text x="48" y="148" font-size="13" letter-spacing="1.3" fill="#C4B5FD">FRONTEND &amp; MOBILE</text>
+  <text x="48" y="180" font-size="16" fill="#E5EAF4">React · Next.js · React Native</text>
+  <text x="48" y="207" font-size="12" fill="#A3AEC5">UI systems · performance · interaction</text>
+  <path class="signal" d="M462 176H546L562 192H670" stroke="#A78BFA" stroke-width="1.5"/>
+  <circle cx="670" cy="192" r="4" fill="#A78BFA"/>
+  <rect x="698" y="141" width="450" height="80" rx="12" fill="#10172A" stroke="#443764"/>
+  <text x="720" y="174" font-size="18" fill="#C4B5FD">PRODUCT ARCHITECTURE</text>
+  <text x="720" y="201" font-size="12" fill="#B8C1D4">Reusable foundations for web and mobile</text>
+  <text x="48" y="246" font-size="13" letter-spacing="1.3" fill="#7BE8C6">WEB3 APPLICATIONS</text>
+  <text x="48" y="278" font-size="16" fill="#E5EAF4">Solana · NEAR · smart contracts</text>
+  <text x="48" y="305" font-size="12" fill="#A3AEC5">Wallets · application flows · integrations</text>
+  <path class="signal" d="M462 274H546L562 290H670" stroke="#56E0B5" stroke-width="1.5"/>
+  <circle cx="670" cy="290" r="4" fill="#56E0B5"/>
+  <rect x="698" y="239" width="450" height="80" rx="12" fill="#10172A" stroke="#284F47"/>
+  <text x="720" y="272" font-size="18" fill="#7BE8C6">BLOCKCHAIN PRODUCT SYSTEMS</text>
+  <text x="720" y="299" font-size="12" fill="#B8C1D4">Connect protocol capabilities to user needs</text>
+  <text x="48" y="344" font-size="13" letter-spacing="1.3" fill="#F6C96B">AI WORKFLOWS</text>
+  <text x="48" y="376" font-size="16" fill="#E5EAF4">LLMs · custom scrapers · automation</text>
+  <text x="48" y="403" font-size="12" fill="#A3AEC5">Exploring intelligence inside useful products</text>
+  <path class="signal" d="M462 372H546L562 388H670" stroke="#F6B84A" stroke-width="1.5"/>
+  <circle cx="670" cy="388" r="4" fill="#F6B84A"/>
+  <rect x="698" y="337" width="450" height="80" rx="12" fill="#10172A" stroke="#655033"/>
+  <text x="720" y="370" font-size="18" fill="#F6C96B">PRODUCT INTELLIGENCE</text>
+  <text x="720" y="397" font-size="12" fill="#B8C1D4">Make information actionable in real workflows</text>
+  <path d="M48 443H1152" stroke="#29334B"/>
+  <text x="48" y="481" font-size="11" letter-spacing="1.4" fill="#A3AEC5">FOUNDATION</text>
+  <text x="200" y="481" font-size="15" fill="#E5EAF4">TypeScript · Node.js · PostgreSQL · Firebase · Cloud</text>
+  <text x="48" y="516" font-size="11" fill="#A3AEC5">An engineering focus map — maintained deliberately as the work evolves.</text>
+</svg>
