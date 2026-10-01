@@ -115,14 +115,15 @@ test('project API uses exactly 90 UTC dates and includes first/popular issues an
   assert.match(body.query, /excludeFirst: false, excludePopular: false/);
 });
 
-test('SVG preserves levels and safely displays project names', () => {
+test('SVG omits the duplicate calendar and safely displays project names', () => {
   const input = calendar([1, 1]);
   input.days[1].contributionLevel = 'FOURTH_QUARTILE';
   const contribution = calculateContributions(input);
   const data = { username: 'me', syncedDateUTC: input.end, summary: { totalContributions: 2, currentStreak: 2, longestStreak: 2, bestDay: contribution.bestDay, last30Days: 2, publicRepositories: 1, activeRepositories: 1 }, activeRepositoryDays: 90, years: [], languages: { items: [], repositoryCount: 0 }, window: { start: input.start, end: input.end, days: 2 }, calendar: contribution.days, projectWindow: { days: 90 }, topProjects: [{ nameWithOwner: 'org/A&B', total: 2, commits: 2, pullRequests: 0, issues: 0, reviews: 0 }] };
   const svg = renderTelemetry(data);
-  assert.match(svg, /fill="#378D76"><title>2026-09-24/);
-  assert.match(svg, /fill="#C1F5E4"><title>2026-09-25/);
+  assert.doesNotMatch(svg, /CONTRIBUTION CALENDAR/);
+  assert.doesNotMatch(svg, /<title>2026-09-24/);
   assert.match(svg, /org\/A&amp;B/);
   assert.match(svg, /TOP PUBLIC PROJECTS/);
 });
+

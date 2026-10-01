@@ -21,10 +21,12 @@ Based in **Yaoundé, Cameroon**, building for users and teams around the world.
 
 ## `> selected_work`
 
-- **POTLOCK:** Next.js dApp work in the NEAR ecosystem, connecting smart-contract data to application state and user flows.
-- **GenaDrop & NearBuilders:** NEAR BOS applications, with NearBuilders developed alongside the Build DAO team.
-- **MintBOS:** Reusable marketplace infrastructure for blockchain applications.
-- **Solana application systems:** Rust on-chain logic, wallet-based roles, gameplay state and transaction flows; Next.js interfaces, leaderboards and moderation dashboards.
+| Project / ecosystem | Engineering contribution | Core tools |
+| --- | --- | --- |
+| **POTLOCK**<br>🟢 NEAR · funding infrastructure | Next.js dApp work connecting smart-contract data to application state and user flows. | <img src="https://skillicons.dev/icons?i=nextjs,react,ts&theme=dark" height="36" alt="Next.js, React, TypeScript" /> |
+| **GenaDrop & NearBuilders**<br>🧩 NEAR BOS · Build DAO | BOS applications, with NearBuilders developed alongside the Build DAO team. | <img src="https://skillicons.dev/icons?i=react,js&theme=dark" height="36" alt="React, JavaScript" /> |
+| **MintBOS**<br>🔗 Blockchain · marketplace systems | Reusable marketplace infrastructure for blockchain applications. | **NEAR BOS**<br>Reusable application components |
+| **Solana application systems**<br>🟣 Solana · on-chain experiences | Rust on-chain logic, wallet-based roles, gameplay state and transaction flows; Next.js interfaces, leaderboards and moderation dashboards. | <img src="https://skillicons.dev/icons?i=rust,nextjs,ts&theme=dark" height="36" alt="Rust, Next.js, TypeScript" /> |
 
 Across this work, the recurring challenge is keeping **frontend, backend and blockchain state** coordinated without sacrificing the user experience.
 
@@ -43,27 +45,25 @@ Across this work, the recurring challenge is keeping **frontend, backend and blo
 
 ## `> working_stack`
 
-| Area | Technologies |
-| --- | --- |
-| Primary languages | TypeScript, JavaScript, Python |
-| Smart-contract development | Rust (Solana), NEAR integrations |
-| Web and backend | React, Next.js, Node.js |
-| Mobile | React Native, Reanimated, Zustand |
-| UI systems | Tailwind CSS, Material UI, reusable components |
-| Data | PostgreSQL, Firebase, MongoDB, MySQL |
-| Blockchain | Solana, NEAR, NEAR BOS, smart contracts |
-| AI | LLMs, OpenAI API, prompt engineering |
+| Product interfaces | Services & data |
+| :---: | :---: |
+| <img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,mui&theme=dark" height="46" alt="React, Next.js, TypeScript, Tailwind CSS, Material UI" /> | <img src="https://skillicons.dev/icons?i=nodejs,postgres,firebase,mongodb,mysql&theme=dark" height="46" alt="Node.js, PostgreSQL, Firebase, MongoDB, MySQL" /> |
+| **Mobile foundations** | **Contract & AI tooling** |
+| <img src="https://skillicons.dev/icons?i=react,ts,js&theme=dark" height="46" alt="React, TypeScript, JavaScript" /><br>React Native · Reanimated · Zustand | <img src="https://skillicons.dev/icons?i=rust,python&theme=dark" height="46" alt="Rust, Python" /><br>Solana · NEAR / BOS · LLMs / OpenAI API |
+
+I use these tools to build **reusable UI systems, coordinated application state and maintainable product foundations**.
 
 ## `> engineering_telemetry`
 
 <p align="center">
-  <img src="./assets/github-telemetry.svg" width="100%" alt="GitHub telemetry: API-visible contributions, streaks, public repositories, repository language bytes, and contribution calendar" />
+  <img src="./assets/github-telemetry.svg" width="100%" alt="GitHub telemetry: API-visible contributions, streaks, public repositories, repository language bytes, and recent public projects" />
 </p>
 
-<sub>Refreshed by GitHub Actions. Contribution totals reflect the activity GitHub makes visible to the workflow. Streaks use UTC dates and the displayed 365-day window. Language percentages describe code bytes in owned public repositories, excluding forks and archives.</sub>
+<sub>Refreshed by GitHub Actions. Contribution totals reflect the activity GitHub makes visible to the workflow. Streaks use UTC dates and GitHub’s returned contribution window. The native contribution calendar appears below this profile. Language percentages describe code bytes in owned public repositories, excluding forks and archives. Recent projects rank your public contributions over the last 90 days.</sub>
 
 ## `> connect`
 
 I'm open to **remote engineering roles** and **product collaborations** involving frontend architecture, Web3, AI or developer tools — especially work with meaningful ownership of the systems being built.
 
 For engineering work and KwadRise Labs enquiries: **[godwill@kwadrise.com](mailto:godwill@kwadrise.com)**.
+
