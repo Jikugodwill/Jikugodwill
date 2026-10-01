@@ -1,44 +1,55 @@
-# Hi 👋, I'm Godwill [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jiku-godwill) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill)
-
 <p align="center">
-  <img
-    src="/assets/godwill-hero.svg"
-    width="100%"
-    alt="Godwill Jiku — Software Architect, Founder of KwadRise Labs, AI & Web3 Engineer"
-  />
+  <img src="./assets/godwill-hero.svg" width="100%" alt="Godwill Jiku — Software Architect and Founder of KwadRise Labs" />
 </p>
 
-### 🚀 Full-Stack Software Architect | Technical Founder | AI & Web3 Specialist
-<hr>
+<p align="center">
+  <a href="https://www.linkedin.com/in/jiku-godwill">LinkedIn</a> ·
+  <a href="https://twitter.com/JikuGodwill">X</a> ·
+  <a href="https://kwadrise.com">KwadRise Labs</a> ·
+  <a href="mailto:godwill@kwadrise.com">Email</a>
+</p>
 
-I am a product-focused engineer with over **5 years** of experience building and scaling production-grade applications. As the **CEO and Founder of KwadRise Labs**, I lead the end-to-end architectural design of innovative SaaS platforms like **Langwa** and **VoiceFriend**.
+## `> system_profile`
 
-- 🤖 **AI Specialty:** Currently specializing in AI-driven blockchain intelligence and custom LLM-powered scrapers.
-- 🌐 **Web3 Experience:** Proven track record in the Solana and NEAR ecosystems (PotLock).
-- 🏗️ **Architecture:** Focused on TypeScript/Next.js for building performant, offline-first PWAs and complex dApps.
+I'm **Godwill Jiku**, a product-focused software engineer and technical founder with **5+ years of experience** building production applications.
 
-## Technologies
+As **Founder & CEO of KwadRise Labs**, I lead product architecture and engineering across web, mobile and blockchain applications.
 
-### 🧠 Specialized Focus
-- **Generative AI:** LLMs, OpenAI API, Prompt Engineering
-- **Web3 & Blockchain:** NEAR Protocol, Solana, Smart Contracts
-- **System Design:** Scalable SaaS Architecture, PWA Development
+- **Frontend architecture:** React, Next.js and TypeScript; reusable UI systems and performant product experiences.
+- **Mobile:** React Native applications with attention to interaction design and maintainable architecture.
+- **Web3:** Experience in the Solana and NEAR ecosystems, including PotLock.
+- **AI:** Developing LLM-powered workflows, custom scrapers and blockchain intelligence tools.
 
-### Programming Languages
-- **Primary:** TypeScript, JavaScript, Python
-- **Others:** Java, C++, PHP
+Based in **Cameroon**, building for users and teams around the world.
 
-### Frontend & Backend
-- **Frameworks:** React, Next.js, Node.js
-- **Styling:** Tailwind CSS, Material UI, CSS3
-- **Databases:** PostgreSQL, MongoDB, MySQL, Firebase
-
-## GitHub Stats 🔥
-<!-- <p align="center">
-<a href="https://github.com/Jikugodwill/github-readme-stats"><img align="center" height="200" width="48%" src="https://github-readme-stats.vercel.app/api?username=Jikugodwill&show_icons=true&locale=en&theme=tokyonight" alt="Jikugodwill" /></a>
-<a href="https://github.com/Jikugodwill/github-readme-stats"><img align="center" height="190" width="48%" src="https://github-readme-stats.vercel.app/api/top-langs?username=Jikugodwill&size_weight=0.5&count_weight=0.5&show_icons=true&locale=en&layout=compact&theme=cobalt" alt="Jikugodwill" /></a>
-</p> -->
+## `> engineering_focus`
 
 <p align="center">
-  <img width="98%" src="https://github-readme-streak-stats.herokuapp.com?user=Jikugodwill&theme=radical&date_format=j%20M%5B%20Y%5D&sideLabels=DDB225" alt="Jikugodwill" />
+  <img src="./assets/engineering-trajectory.svg" width="100%" alt="Engineering focus: frontend and mobile systems, Web3 applications, and AI-powered product workflows" />
 </p>
+
+## `> working_stack`
+
+| Area | Technologies |
+| --- | --- |
+| Primary languages | TypeScript, JavaScript, Python |
+| Web and backend | React, Next.js, Node.js |
+| Mobile | React Native, Reanimated, Zustand |
+| UI systems | Tailwind CSS, Material UI, reusable components |
+| Data | PostgreSQL, Firebase, MongoDB, MySQL |
+| Blockchain | Solana, NEAR, smart contracts |
+| AI | LLMs, OpenAI API, prompt engineering |
+
+## `> engineering_telemetry`
+
+<p align="center">
+  <img src="./assets/github-telemetry.svg" width="100%" alt="GitHub telemetry: API-visible contributions, streaks, public repositories, repository language bytes, and contribution calendar" />
+</p>
+
+<sub>Refreshed by GitHub Actions. Contribution totals reflect the activity GitHub makes visible to the workflow. Streaks use UTC dates and the displayed 365-day window. Language percentages describe code bytes in owned public repositories, excluding forks and archives.</sub>
+
+## `> connect`
+
+I'm open to **remote engineering roles** and **product collaborations** involving frontend architecture, AI or Web3.
+
+For engineering work and KwadRise Labs enquiries: **[godwill@kwadrise.com](mailto:godwill@kwadrise.com)**.
