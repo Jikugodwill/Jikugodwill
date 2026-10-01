@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="44" viewBox="0 0 204 44" fill="none" role="img" aria-labelledby="title">
+  <title id="title">KWADRISE LABS — Godwill Nsanwi Jiku</title>
+  <rect x=".5" y=".5" width="203" height="43" rx="9" fill="#0D1224" stroke="#29334B"/>
+  <rect x="8" y="8" width="30" height="28" rx="6" fill="#AF9BFF" fill-opacity=".09"/>
+  <g transform="translate(13 12) scale(.154)" fill="#AF9BFF"><path d="M126.5,106.61l-27.75-34.79,6.85-7.12,9.12-9.49c7.72-8.03,12.18-18.16,12.22-27.81,.02-4.05-.72-7.9-2.2-11.46C121.06,7.11,113.42,1.37,103.76,.18l-.24-.03-30.74-.15L4.81,.11C2.36,.1,.36,2.04,.35,4.44l-.35,70.19,.62,28.54c.11,5.18,1.49,10.08,3.98,14.17,2.86,4.7,7.13,8.29,12.33,10.37,3.27,1.31,6.78,1.98,10.44,2h.19c9.88-.01,20.14-4.81,28.15-13.16l13.07-13.6v.06s3.72-3.88,3.72-3.88l.14,.15,5.57-5.53,1.11-1.19,25.15,31.53c4.84,6.07,13.69,7.07,19.77,2.24,6.08-4.83,7.08-13.66,2.24-19.73Zm-100.57-3.2l.07-33.25,.08-39.79h0v-1.63s72.99,.56,72.99,.56l-35.64,36.77-.97,1L25.93,103.41Z"/></g>
+  <text x="48" y="26" fill="#E5EAF4" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="11" font-weight="600" letter-spacing=".5">KWADRISE LABS</text>
+  <path d="M12 42H192" stroke="#AF9BFF" stroke-opacity=".6"/>
+</svg>

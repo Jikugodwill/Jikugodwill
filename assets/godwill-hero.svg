@@ -3,9 +3,9 @@
   role="img"
   aria-labelledby="title desc">
 
-  <title id="title">Godwill Jiku — Software Architect, Technical Founder, AI &amp; Web3 Engineer</title>
+  <title id="title">Godwill Nsanwi Jiku — Systems Architect, Technical Founder, AI &amp; Web3 Engineer</title>
   <desc id="desc">
-    Futuristic engineering profile banner for Godwill Jiku, founder of KwadRise Labs,
+    Futuristic engineering profile banner for Godwill Nsanwi Jiku, founder of KwadRise Labs,
     focused on software architecture, AI, Web3 and product systems.
   </desc>
 
@@ -358,11 +358,11 @@
     x="68"
     y="164"
     class="mono"
-    font-size="43"
+    font-size="38"
     font-weight="700"
     letter-spacing=".8"
     fill="#F8FAFC">
-    GODWILL JIKU
+    GODWILL NSANWI JIKU
   </text>
 
   <rect
@@ -381,16 +381,16 @@
     font-weight="500">
 
     <g class="role-1">
-      <text x="70" y="221" fill="#C4B5FD">Software Architect</text>
-      <rect class="cursor" x="296" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
+      <text x="70" y="221" fill="#C4B5FD">Systems Architect</text>
+      <rect class="cursor" x="284" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
     </g>
     <g class="role-2">
       <text x="70" y="221" fill="#F6C96B">Founder · KwadRise Labs</text>
       <rect class="cursor" x="344" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
     </g>
     <g class="role-3">
-      <text x="70" y="221" fill="#7BE8C6">AI · Web3 · Product Systems</text>
-      <rect class="cursor" x="392" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
+      <text x="70" y="221" fill="#7BE8C6">Frontend · AI · Web3</text>
+      <rect class="cursor" x="308" y="202" width="10" height="24" rx="1" fill="#F6B84A"/>
     </g>
 
   </g>
@@ -402,7 +402,7 @@
     class="mono"
     font-size="15.5"
     fill="#94A3B8">
-    Designing and shipping scalable systems from Cameroon to the world.
+    Helping startups ship scalable product systems.
   </text>
 
   <!-- Availability/status -->
@@ -479,3 +479,4 @@
     <text x="903" y="281">SYSTEMS</text>
   </g>
 </svg>
+
