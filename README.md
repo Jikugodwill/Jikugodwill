@@ -1,5 +1,13 @@
 # Hi 👋, I'm Godwill [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jiku-godwill) [![Follow me on Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/JikuGodwill)
 
+<p align="center">
+  <img
+    src="/assets/godwill-hero.svg"
+    width="100%"
+    alt="Godwill Jiku — Software Architect, Founder of KwadRise Labs, AI & Web3 Engineer"
+  />
+</p>
+
 ### 🚀 Full-Stack Software Architect | Technical Founder | AI & Web3 Specialist
 <hr>
 
