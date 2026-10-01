@@ -1,8 +1,14 @@
 {
   "username": "Jikugodwill",
-  "windowDays": 365,
   "yearCount": 4,
   "activeRepositoryDays": 90,
   "languageLimit": 6,
-  "excludeLanguageRepositories": ["Jikugodwill"]
+  "excludeLanguageRepositories": [
+    "Jikugodwill"
+  ],
+  "projectWindowDays": 90,
+  "projectLimit": 4,
+  "excludeProjectRepositories": [
+    "Jikugodwill/Jikugodwill"
+  ]
 }

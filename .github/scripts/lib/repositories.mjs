@@ -29,3 +29,22 @@ export function aggregateLanguages(repositoryLanguages, limit) {
       .map(([name, bytes]) => ({ name, bytes, percent: totalBytes ? bytes / totalBytes * 100 : 0 }))
   };
 }
+
+
+export function rankProjects(activity, limit = 4, exclusions = []) {
+  const excluded = new Set(exclusions.map(name => name.toLowerCase()));
+  const projects = new Map();
+  for (const category of ['commits', 'pullRequests', 'issues', 'reviews']) {
+    for (const entry of activity[category]) {
+      const repo = entry.repository;
+      if (!repo || repo.isPrivate || excluded.has(repo.nameWithOwner.toLowerCase())) continue;
+      const count = entry.contributions.totalCount;
+      if (!Number.isInteger(count) || count < 0) throw new Error('Invalid project contribution count.');
+      const project = projects.get(repo.nameWithOwner) || { name: repo.name, nameWithOwner: repo.nameWithOwner, url: repo.url, total: 0, commits: 0, pullRequests: 0, issues: 0, reviews: 0 };
+      project[category] += count;
+      project.total += count;
+      projects.set(repo.nameWithOwner, project);
+    }
+  }
+  return [...projects.values()].filter(project => project.total > 0).sort((a, b) => b.total - a.total || a.nameWithOwner.localeCompare(b.nameWithOwner, 'en')).slice(0, limit);
+}

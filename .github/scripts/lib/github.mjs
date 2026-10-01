@@ -56,15 +56,13 @@ export async function fetchOwnedPublicRepositories(request, username) {
 
 export async function fetchContributionCalendars(request, username, config, now, createdAt) {
   const today = now.toISOString().slice(0, 10);
-  const start = new Date(`${today}T00:00:00Z`);
-  start.setUTCDate(start.getUTCDate() - config.windowDays + 1);
   const currentYear = now.getUTCFullYear();
   const firstYear = Math.max(currentYear - config.yearCount + 1, new Date(createdAt).getUTCFullYear());
   const years = Array.from({ length: currentYear - firstYear + 1 }, (_, i) => firstYear + i);
   const fields = `totalContributions weeks { contributionDays { date weekday contributionCount contributionLevel } }`;
-  const definitions = ['$login: String!', '$from: DateTime!', '$to: DateTime!'];
-  const variables = { login: username, from: start.toISOString(), to: now.toISOString() };
-  const selections = [`window: contributionsCollection(from: $from, to: $to) { contributionCalendar { ${fields} } }`];
+  const definitions = ['$login: String!'];
+  const variables = { login: username };
+  const selections = [`window: contributionsCollection { contributionCalendar { ${fields} } }`];
 
   for (const year of years) {
     definitions.push(`$from${year}: DateTime!`, `$to${year}: DateTime!`);
@@ -78,11 +76,12 @@ export async function fetchContributionCalendars(request, username, config, now,
   const user = result.data?.user;
   if (!user?.window?.contributionCalendar) throw new Error('Contribution calendar unavailable; keeping previous output.');
   const calendar = user.window.contributionCalendar;
-  const days = calendar.weeks.flatMap(week => week.contributionDays).filter(day => day.date >= start.toISOString().slice(0, 10) && day.date <= today);
+  const days = calendar.weeks.flatMap(week => week.contributionDays).filter(day => day.date <= today);
+  if (!days.length) throw new Error('Empty GitHub contribution calendar.');
 
   return {
-    start: start.toISOString().slice(0, 10),
-    end: today,
+    start: days[0].date,
+    end: days.at(-1).date,
     total: calendar.totalContributions,
     days,
     years: years.map(year => ({ year, total: user[`y${year}`].contributionCalendar.totalContributions, partial: year === currentYear }))
@@ -102,4 +101,28 @@ export async function fetchRepositoryLanguages(request, repositories) {
   }
   await Promise.all(Array.from({ length: Math.min(3, repositories.length) }, worker));
   return results;
+}
+
+
+export async function fetchProjectActivity(request, username, now, windowDays = 90) {
+  const start = new Date(`${now.toISOString().slice(0, 10)}T00:00:00Z`);
+  start.setUTCDate(start.getUTCDate() - windowDays + 1);
+  const fields = 'repository { name nameWithOwner url isPrivate } contributions { totalCount }';
+  const query = `query Projects($login: String!, $from: DateTime!, $to: DateTime!) {
+    user(login: $login) { contributionsCollection(from: $from, to: $to) {
+      commits: commitContributionsByRepository(maxRepositories: 100) { ${fields} }
+      pullRequests: pullRequestContributionsByRepository(maxRepositories: 100, excludeFirst: false, excludePopular: false) { ${fields} }
+      issues: issueContributionsByRepository(maxRepositories: 100, excludeFirst: false, excludePopular: false) { ${fields} }
+      reviews: pullRequestReviewContributionsByRepository(maxRepositories: 100) { ${fields} }
+    } }
+  }`;
+  const result = await request('/graphql', { query, variables: { login: username, from: start.toISOString(), to: now.toISOString() } });
+  const activity = result.data?.user?.contributionsCollection;
+  if (!activity) throw new Error('Recent project activity unavailable.');
+  // At the API cap we cannot safely promise an account-wide ranking.
+  for (const category of ['commits', 'pullRequests', 'issues', 'reviews']) {
+    if (!Array.isArray(activity[category])) throw new Error(`Missing project category: ${category}`);
+    if (activity[category].length >= 100) throw new Error('Project activity reached the API repository cap; keeping previous output.');
+  }
+  return { start: start.toISOString().slice(0, 10), end: now.toISOString().slice(0, 10), days: windowDays, activity };
 }

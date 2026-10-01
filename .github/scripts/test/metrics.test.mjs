@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calculateContributions } from '../lib/contributions.mjs';
-import { aggregateLanguages, selectLanguageRepositories, calculateRepositoryMetrics } from '../lib/repositories.mjs';
-import { fetchOwnedPublicRepositories, fetchContributionCalendars, createGitHubClient } from '../lib/github.mjs';
-import { escapeXml } from '../lib/render-svg.mjs';
+import { aggregateLanguages, selectLanguageRepositories, calculateRepositoryMetrics, rankProjects } from '../lib/repositories.mjs';
+import { fetchOwnedPublicRepositories, fetchContributionCalendars, createGitHubClient, fetchProjectActivity } from '../lib/github.mjs';
+import { escapeXml, renderTelemetry } from '../lib/render-svg.mjs';
 
 function calendar(counts, start = '2026-09-24') {
   const startTime = Date.parse(`${start}T00:00:00Z`);
-  const days = counts.map((contributionCount, index) => ({ date: new Date(startTime + index * 86_400_000).toISOString().slice(0, 10), contributionCount }));
+  const days = counts.map((contributionCount, index) => ({ date: new Date(startTime + index * 86_400_000).toISOString().slice(0, 10), contributionCount, weekday: new Date(startTime + index * 86_400_000).getUTCDay(), contributionLevel: contributionCount ? 'SECOND_QUARTILE' : 'NONE' }));
   return { start, end: days.at(-1).date, total: counts.reduce((a, b) => a + b, 0), days };
 }
 
@@ -78,13 +78,51 @@ test('year queries respect account creation and stop the current year at now', a
   let body;
   await fetchContributionCalendars(async (_path, requestBody) => {
     body = requestBody;
-    return { data: { user: { window: { contributionCalendar: { totalContributions: 0, weeks: [] } }, y2025: { contributionCalendar: { totalContributions: 0 } }, y2026: { contributionCalendar: { totalContributions: 0 } } } } };
+    return { data: { user: { window: { contributionCalendar: { totalContributions: 0, weeks: [{ contributionDays: calendar([0]).days }] } }, y2025: { contributionCalendar: { totalContributions: 0 } }, y2026: { contributionCalendar: { totalContributions: 0 } } } } };
   }, 'Jikugodwill', { windowDays: 365, yearCount: 4 }, now, '2025-06-01T00:00:00Z');
-  assert.equal(body.variables.from, '2025-10-02T00:00:00.000Z');
+  assert.equal(body.variables.from, undefined);
+  assert.match(body.query, /window: contributionsCollection \{/);
   assert.equal(body.variables.to2026, now.toISOString());
   assert.equal(body.variables.from2024, undefined);
 });
 
 test('SVG text safely escapes XML special characters', () => {
   assert.equal(escapeXml('A&B <"x">'), 'A&amp;B &lt;&quot;x&quot;&gt;');
+});
+
+
+test('GitHub levels survive even when equal counts use different authoritative tiers', () => {
+  const input = calendar([1, 1]);
+  input.days[1].contributionLevel = 'FOURTH_QUARTILE';
+  assert.deepEqual(calculateContributions(input).days.map(day => day.level), ['SECOND_QUARTILE', 'FOURTH_QUARTILE']);
+});
+
+test('projects include organization work, combine activity types and exclude private/profile names', () => {
+  const entry = (name, count, isPrivate = false) => ({ repository: { name: name.split('/')[1], nameWithOwner: name, url: `https://github.com/${name}`, isPrivate }, contributions: { totalCount: count } });
+  const activity = { commits: [entry('org/build', 3), entry('me/profile', 99), entry('secret/work', 999, true)], pullRequests: [entry('org/build', 2), entry('org/other', 4)], issues: [], reviews: [entry('org/other', 1)] };
+  const result = rankProjects(activity, 4, ['ME/PROFILE']);
+  assert.deepEqual(result.map(p => [p.nameWithOwner, p.total]), [['org/build', 5], ['org/other', 5]]);
+  assert.equal(result.length, 2);
+  assert.equal(result[0].pullRequests, 2);
+  assert.deepEqual(rankProjects({ commits: [], pullRequests: [], issues: [], reviews: [] }), []);
+});
+
+test('project API uses exactly 90 UTC dates and includes first/popular issues and PRs', async () => {
+  let body;
+  const result = await fetchProjectActivity(async (_path, b) => { body = b; return { data: { user: { contributionsCollection: { commits: [], pullRequests: [], issues: [], reviews: [] } } } }; }, 'me', new Date('2026-10-01T06:00:00Z'));
+  assert.equal(result.start, '2026-07-04');
+  assert.equal(body.variables.to, '2026-10-01T06:00:00.000Z');
+  assert.match(body.query, /excludeFirst: false, excludePopular: false/);
+});
+
+test('SVG preserves levels and safely displays project names', () => {
+  const input = calendar([1, 1]);
+  input.days[1].contributionLevel = 'FOURTH_QUARTILE';
+  const contribution = calculateContributions(input);
+  const data = { username: 'me', syncedDateUTC: input.end, summary: { totalContributions: 2, currentStreak: 2, longestStreak: 2, bestDay: contribution.bestDay, last30Days: 2, publicRepositories: 1, activeRepositories: 1 }, activeRepositoryDays: 90, years: [], languages: { items: [], repositoryCount: 0 }, window: { start: input.start, end: input.end, days: 2 }, calendar: contribution.days, projectWindow: { days: 90 }, topProjects: [{ nameWithOwner: 'org/A&B', total: 2, commits: 2, pullRequests: 0, issues: 0, reviews: 0 }] };
+  const svg = renderTelemetry(data);
+  assert.match(svg, /fill="#378D76"><title>2026-09-24/);
+  assert.match(svg, /fill="#C1F5E4"><title>2026-09-25/);
+  assert.match(svg, /org\/A&amp;B/);
+  assert.match(svg, /TOP PUBLIC PROJECTS/);
 });

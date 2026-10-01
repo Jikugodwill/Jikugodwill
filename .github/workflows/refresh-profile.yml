@@ -42,6 +42,7 @@ jobs:
       - name: Fetch GitHub data and render telemetry
         run: npm run generate
         env:
+          PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit generated files only when changed
@@ -58,3 +59,4 @@ jobs:
           git commit -m "chore: refresh engineering telemetry"
           git pull --rebase origin "$DEFAULT_BRANCH"
           git push origin "HEAD:$DEFAULT_BRANCH"
+

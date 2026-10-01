@@ -9,7 +9,8 @@ export function calculateContributions(calendar) {
     if (!Number.isInteger(day.contributionCount) || day.contributionCount < 0 || counts.has(day.date)) {
       throw new Error('Invalid or duplicate contribution day.');
     }
-    counts.set(day.date, day.contributionCount);
+    if (!['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'].includes(day.contributionLevel) || day.weekday !== new Date(`${day.date}T00:00:00Z`).getUTCDay()) throw new Error('Invalid GitHub contribution level or weekday.');
+    counts.set(day.date, day);
   }
 
   const days = [];
@@ -17,7 +18,8 @@ export function calculateContributions(calendar) {
     const date = new Date(time).toISOString().slice(0, 10);
     // Missing dates must fail instead of quietly inventing zeros.
     if (!counts.has(date)) throw new Error(`Incomplete contribution calendar: ${date}`);
-    days.push({ date, weekday: new Date(time).getUTCDay(), count: counts.get(date) });
+    const day = counts.get(date);
+    days.push({ date, weekday: day.weekday, count: day.contributionCount, level: day.contributionLevel });
   }
 
   let run = 0;
@@ -45,3 +47,4 @@ export function calculateContributions(calendar) {
     days
   };
 }
+

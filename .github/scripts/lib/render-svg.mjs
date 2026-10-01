@@ -37,19 +37,25 @@ export function renderTelemetry(data) {
   const first = data.calendar[0];
   const firstTime = first ? Date.parse(`${first.date}T00:00:00Z`) : 0;
   const firstSunday = firstTime - (first?.weekday ?? 0) * 86_400_000;
-  const maxCount = Math.max(1, ...data.calendar.map(day => day.count));
-  const cellColor = count => count === 0 ? '#202A40' : ['#27483F', '#378D76', '#56E0B5', '#C1F5E4'][Math.min(3, Math.ceil(count / maxCount * 4) - 1)];
+  const levels = { NONE: '#202A40', FIRST_QUARTILE: '#27483F', SECOND_QUARTILE: '#378D76', THIRD_QUARTILE: '#56E0B5', FOURTH_QUARTILE: '#C1F5E4' };
   const cells = data.calendar.map(day => {
     const time = Date.parse(`${day.date}T00:00:00Z`);
     const column = Math.floor((time - firstSunday) / (7 * 86_400_000));
-    return `<rect x="${84 + column * 19}" y="${602 + day.weekday * 19}" width="15" height="15" rx="3" fill="${cellColor(day.count)}"><title>${escapeXml(`${day.date}: ${day.count} contributions`)}</title></rect>`;
+    return `<rect x="${84 + column * 19}" y="${602 + day.weekday * 19}" width="15" height="15" rx="3" fill="${levels[day.level]}"><title>${escapeXml(`${day.date}: ${day.count} contributions`)}</title></rect>`;
   }).join('\n');
-  const months = data.calendar.filter((day, index) => index === 0 || day.date.endsWith('-01')).map(day => {
+  const months = data.calendar.filter(day => day.date.endsWith('-01')).map(day => {
     const column = Math.floor((Date.parse(`${day.date}T00:00:00Z`) - firstSunday) / (7 * 86_400_000));
     return text(84 + column * 19, 587, new Date(`${day.date}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }), 10, '#A3AEC5');
   }).join('\n');
 
-  return `<svg width="1200" height="850" viewBox="0 0 1200 850" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  const projects = data.topProjects.length ? data.topProjects.map((project, index) => {
+    const x = 48 + (index % 2) * 564;
+    const y = 838 + Math.floor(index / 2) * 100;
+    const label = project.nameWithOwner.length > 46 ? `${project.nameWithOwner.slice(0, 45)}…` : project.nameWithOwner;
+    return `<g><title>${escapeXml(project.nameWithOwner)}</title><rect x="${x}" y="${y}" width="540" height="86" rx="10" fill="#10172A" stroke="#29334B"/>${text(x + 16, y + 27, `${index + 1}. ${label}`, 13, '#F8FAFC')}${text(x + 16, y + 53, `${number(project.total)} contributions`, 16, '#56E0B5')}${text(x + 16, y + 73, `${project.commits} commits · ${project.pullRequests} PRs · ${project.issues} issues · ${project.reviews} reviews`, 10)}</g>`;
+  }).join('\n') : text(48, 880, 'No eligible public project contributions in this period.', 13);
+
+  return `<svg width="1200" height="1120" viewBox="0 0 1200 1120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(data.username)} — GitHub engineering telemetry</title>
   <desc id="desc">${escapeXml(`${data.summary.totalContributions} contributions from ${data.window.start} to ${data.window.end}; ${data.summary.currentStreak} day current streak; ${data.summary.publicRepositories} owned public repositories. Language shares measure repository code bytes, not proficiency.`)}</desc>
   <defs>
@@ -58,8 +64,8 @@ export function renderTelemetry(data) {
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#A78BFA" stroke-opacity=".045"/></pattern>
   </defs>
   <style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}</style>
-  <rect x="1" y="1" width="1198" height="848" rx="22" fill="url(#background)" stroke="url(#accent)" stroke-width="2"/>
-  <rect x="18" y="18" width="1164" height="814" rx="15" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="1118" rx="22" fill="url(#background)" stroke="url(#accent)" stroke-width="2"/>
+  <rect x="18" y="18" width="1164" height="1084" rx="15" fill="url(#grid)"/>
   ${text(44, 43, `GITHUB // ${data.username.toUpperCase()}`, 12, '#A3AEC5', 'letter-spacing="2"')}
   ${text(44, 86, 'ENGINEERING TELEMETRY', 29, '#F8FAFC', 'font-weight="700"')}
   ${text(1152, 45, `SYNCED ${data.syncedDateUTC} UTC`, 11, '#56E0B5', 'text-anchor="end"')}
@@ -82,7 +88,13 @@ export function renderTelemetry(data) {
   ${text(914, 762, 'Less', 10, '#A3AEC5')}
   ${['#202A40', '#27483F', '#378D76', '#56E0B5', '#C1F5E4'].map((color, index) => `<rect x="${952 + index * 20}" y="750" width="15" height="15" rx="3" fill="${color}"/>`).join('')}
   ${text(1060, 762, 'More', 10, '#A3AEC5')}
-  ${text(48, 804, 'Streaks: displayed window, UTC dates; today may still be in progress.', 11, '#A3AEC5')}
-  ${text(48, 825, 'GitHub activity is a partial record of engineering work. Language bytes do not measure proficiency.', 10, '#A3AEC5')}
+  <path d="M44 786H1156" stroke="#29334B"/>
+  ${text(48, 814, `TOP PUBLIC PROJECTS // LAST ${data.projectWindow.days} DAYS`, 12, '#C4B5FD')}
+  ${text(1152, 814, 'RANKED BY YOUR CONTRIBUTIONS', 10, '#A3AEC5', 'text-anchor="end"')}
+  ${projects}
+  ${text(48, 1030, 'Calendar intensity levels come directly from GitHub; project names are public only.', 10, '#A3AEC5')}
+  ${text(48, 1060, 'Streaks: displayed window, UTC dates; today may still be in progress.', 11, '#A3AEC5')}
+  ${text(48, 1081, 'GitHub activity is a partial record of engineering work. Language bytes do not measure proficiency.', 10, '#A3AEC5')}
 </svg>\n`;
 }
+
