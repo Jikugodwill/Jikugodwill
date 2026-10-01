@@ -3,7 +3,7 @@
 ### 🚀 Full-Stack Software Architect | Technical Founder | AI & Web3 Specialist
 <hr>
 
-I am a product-focused engineer with over **5 years** of experience building and scaling production-grade applications. As the **CEO and Founder of KwadRise Solutions**, I lead the end-to-end architectural design of innovative SaaS platforms like **Langwa** and **VoiceFriend**.
+I am a product-focused engineer with over **5 years** of experience building and scaling production-grade applications. As the **CEO and Founder of KwadRise Labs**, I lead the end-to-end architectural design of innovative SaaS platforms like **Langwa** and **VoiceFriend**.
 
 - 🤖 **AI Specialty:** Currently specializing in AI-driven blockchain intelligence and custom LLM-powered scrapers.
 - 🌐 **Web3 Experience:** Proven track record in the Solana and NEAR ecosystems (PotLock).
