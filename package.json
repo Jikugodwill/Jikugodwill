@@ -1,0 +1,12 @@
+{
+  "name": "jikugodwill-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-contained GitHub profile visuals and API telemetry",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "generate": "node .github/scripts/generate-github-metrics.mjs",
+    "test": "node --test .github/scripts/test/*.test.mjs"
+  }
+}
